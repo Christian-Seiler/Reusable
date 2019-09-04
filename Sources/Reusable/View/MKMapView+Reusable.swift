@@ -31,11 +31,14 @@ public extension MKMapView {
      */
     final func dequeueReusableCell<T: MKAnnotationView>(for annotation: MKAnnotation,
                                                         annotationType: T.Type = T.self) -> T where T: Reusable {
-        guard let annotationView = self.dequeueReusableAnnotationView(withIdentifier: annotationType.reuseIdentifier,
-                                                                      for: annotation) as? T  else {
-            return T(annotation: annotation, reuseIdentifier: annotationType.reuseIdentifier)
-        }
-        return annotationView
 
+        if let view: T = self.dequeueReusableAnnotationView(withIdentifier: annotationType.reuseIdentifier) as? T {
+            view.annotation = annotation
+            return view
+        } else {
+            let view = T(annotation: annotation, reuseIdentifier: annotationType.reuseIdentifier)
+            view.canShowCallout = true
+            return view
+        }
     }
 }
