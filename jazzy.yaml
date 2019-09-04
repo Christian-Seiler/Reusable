@@ -1,0 +1,17 @@
+#
+#  jazzy.yaml
+#  RPGLists
+#
+#  Created by Christian Seiler on 22.02.19.
+#  Copyright © 2019 Christian Seiler. All rights reserved.
+#
+
+clean: true
+author: Christian Seiler
+author_url: http://www.christianseiler.ch
+
+module: Reusable
+framework_root:  Sources
+exclude: ./docs
+min_acl: public
+# copyright: Christian Seiler Services
