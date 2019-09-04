@@ -1,6 +1,6 @@
 //
 //  UICollectionView+Reusable.swift
-//  MuseumPass
+//  Reusable
 //
 //  Created by Christian Seiler on 04.09.19.
 //  Copyright © 2019 Christian Seiler. All rights reserved.
