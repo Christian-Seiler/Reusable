@@ -16,7 +16,7 @@ public extension MKMapView {
      - parameter annotationType: the `MKAnnotationView` (`Reusable`-conforming) subclass to register
      - seealso: `register(_:,forAnnotationViewWithReuseIdentifier:)`
      */
-    final func register<T: MKAnnotationView>(annotationType: T.Type) where T: Reusable {
+     final func register<T: MKAnnotationView>(annotationType: T.Type) where T: Reusable {
         self.register(annotationType.self, forAnnotationViewWithReuseIdentifier: annotationType.reuseIdentifier)
     }
 
@@ -29,7 +29,7 @@ public extension MKMapView {
      except when your type is in a variable and cannot be determined at compile time.
      - seealso: `dequeueReusableAnnotationView(withIdentifier:,for:)`
      */
-    final func dequeueReusableCell<T: MKAnnotationView>(for annotation: MKAnnotation,
+     final func dequeueReusableCell<T: MKAnnotationView>(for annotation: MKAnnotation,
                                                         annotationType: T.Type = T.self) -> T where T: Reusable {
 
         if let view: T = self.dequeueReusableAnnotationView(withIdentifier: annotationType.reuseIdentifier) as? T {

@@ -34,7 +34,7 @@ public extension NibLoadable where Self: UIView {
      Returns a `UIView` object instantiated from nib
      - returns: A `NibLoadable`, `UIView` instance
      */
-    static func loadFromNib() -> Self {
+     static func loadFromNib() -> Self {
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? Self else {
             fatalError("The nib \(nib) expected its root view to be of type \(self)")
         }
