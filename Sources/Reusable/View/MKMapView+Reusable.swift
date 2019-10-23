@@ -8,7 +8,7 @@
 import MapKit
 
 // MARK: Reusable support for MKMapView
-@available(iOS 11.0, *)
+@available(iOS 11.0, macOS 10.13, tvOS 11.0, *)
 public extension MKMapView {
 
     /**

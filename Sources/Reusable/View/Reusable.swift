@@ -6,10 +6,10 @@
 //  Copyright © 2019 Christian Seiler. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 // MARK: Protocol definition
-/// Make your `UITableViewCell` and `UICollectionViewCell` subclasses
+/// Make your `TableViewCell` and `CollectionViewCell` subclasses
 /// conform to this protocol when they are *not* NIB-based but only code-based
 /// to be able to dequeue them in a type-safe manner
 public protocol Reusable: class {
@@ -17,7 +17,7 @@ public protocol Reusable: class {
      static var reuseIdentifier: String { get }
 }
 
-/// Make your `UITableViewCell` and `UICollectionViewCell` subclasses
+/// Make your `TableViewCell` and `CollectionViewCell` subclasses
 /// conform to this typealias when they *are* NIB-based
 /// to be able to dequeue them in a type-safe manner
 public typealias NibReusable = Reusable & NibLoadable

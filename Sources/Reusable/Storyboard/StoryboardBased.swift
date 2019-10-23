@@ -6,29 +6,33 @@
 //  Copyright © 2019 Christian Seiler. All rights reserved.
 //
 
+#if os(OSX)
+import AppKit
+#elseif os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
+#endif
 
 // MARK: Protocol Definition
-/// Make your UIViewController subclasses conform to this protocol when:
+/// Make your ViewController subclasses conform to this protocol when:
 ///  * they *are* Storyboard-based, and
 ///  * this ViewController is the initialViewController of your Storyboard
 ///
 /// to be able to instantiate them from the Storyboard in a type-safe manner
 public protocol StoryboardBased: class {
-    /// The UIStoryboard to use when we want to instantiate this ViewController
-    static var sceneStoryboard: UIStoryboard { get }
+    /// The Storyboard to use when we want to instantiate this ViewController
+    static var sceneStoryboard: Storyboard { get }
 }
 
 // MARK: Default Implementation
 public extension StoryboardBased {
     /// By default, use the storybaord with the same name as the class
-    static var sceneStoryboard: UIStoryboard {
-        return UIStoryboard(name: String(describing: self), bundle: Bundle(for: self))
+    static var sceneStoryboard: Storyboard {
+        return Storyboard(name: String(describing: self), bundle: Bundle(for: self))
     }
 }
 
 // MARK: Support for instantiation from Storyboard
-public extension StoryboardBased where Self: UIViewController {
+public extension StoryboardBased where Self: ViewController {
     /**
      Create an instance of the ViewController from its associated Storyboard's initialViewController
      - returns: instance of the conforming ViewController
