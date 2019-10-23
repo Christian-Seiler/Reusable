@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StoryboardBased Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/StoryboardBased" class="dashAnchor"></a>
+    <a title="StoryboardBased Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (81% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        StoryboardBased Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CollectionView.html">CollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/MKMapView.html">MKMapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/TableView.html">TableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/NibLoadable.html">NibLoadable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NibOwnerLoadable.html">NibOwnerLoadable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Reusable.html">Reusable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoryboardBased.html">StoryboardBased</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoryboardSceneBased.html">StoryboardSceneBased</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/CollectionView">CollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable14CollectionViewa">CollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/CollectionViewCell">CollectionViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable18CollectionViewCella">CollectionViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable03NibA0a">NibReusable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/NibType">NibType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable7NibTypea">NibType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/Storyboard">Storyboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable10Storyboarda">Storyboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/TableView">TableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable9TableViewa">TableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/TableViewCell">TableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable13TableViewCella">TableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/ViewController">ViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable14ViewControllera">ViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/ViewType">ViewType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Reusable8ViewTypea">ViewType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>StoryboardBased</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">StoryboardBased</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Make your ViewController subclasses conform to this protocol when:</p>
+
+<ul>
+<li>they <em>are</em> Storyboard-based, and</li>
+<li>this ViewController is the initialViewController of your Storyboard</li>
+</ul>
+
+<p>to be able to instantiate them from the Storyboard in a type-safe manner</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Reusable15StoryboardBasedP05sceneB0So12UIStoryboardCvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/sceneStoryboard" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Reusable15StoryboardBasedP05sceneB0So12UIStoryboardCvpZ">sceneStoryboard</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Storyboard to use when we want to instantiate this ViewController</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>By default, use the storybaord with the same name as the class</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">sceneStoryboard</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/Storyboard">Storyboard</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Support%20for%20instantiation%20from%20Storyboard"></a>
+                <a name="//apple_ref/swift/Section/Support for instantiation from Storyboard" class="dashAnchor"></a>
+                <a href="#/Support%20for%20instantiation%20from%20Storyboard">
+                  <h3 class="section-name">Support for instantiation from Storyboard</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Reusable15StoryboardBasedPAASo16UIViewControllerCRbzrlE11instantiatexyFZ"></a>
+                    <a name="//apple_ref/swift/Method/instantiate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Reusable15StoryboardBasedPAASo16UIViewControllerCRbzrlE11instantiatexyFZ">instantiate()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create an instance of the ViewController from its associated Storyboard&rsquo;s initialViewController</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">instantiate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>instance of the conforming ViewController</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-10-22)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

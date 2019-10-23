@@ -7,11 +7,21 @@
 #
 
 clean: true
-author: Christian Seiler
-author_url: http://www.christianseiler.ch
+
+
 
 module: Reusable
-framework_root:  Sources
+framework_root:  ./Sources
 exclude: ./docs
 min_acl: public
-# copyright: Christian Seiler Services
+sdk: [iphone,macosx]
+
+author: Christian Seiler
+author_url: "http://www.christianseiler.ch"
+
+title: "Reusable Framework"
+version: 1.0.2
+copyright: "Christian Seiler Services"
+readme: "README.md"
+
+# head
