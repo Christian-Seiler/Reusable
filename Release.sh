@@ -7,17 +7,7 @@
 #  Copyright © 2019 Christian Seiler. All rights reserved.
 
 #get highest tag number
-VERSION=`git describe --abbrev=0 --tags 2>/dev/null`
-
-if [ -z $VERSION ];then
-    NEW_TAG="1.0.0"
-    echo "No tag present."
-    echo "Creating tag: $NEW_TAG"
-    git tag $NEW_TAG
-    git push --tags
-    echo "Tag created and pushed: $NEW_TAG"
-    exit 0;
-fi
+VERSION=`xcrun agvtool mvers -terse1`
 
 #replace . with space so can split into an array
 VERSION_BITS=(${VERSION//./ })
@@ -30,6 +20,8 @@ VNUM3=$((VNUM3+1))
 
 #create new tag
 NEW_TAG="${VNUM1}.${VNUM2}.${VNUM3}"
+
+xcrun agvtool new-marketing-version $NEW_TAG
 
 #get current hash and see if it already has a tag
 GIT_COMMIT=`git rev-parse HEAD`
