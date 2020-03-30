@@ -1,0 +1,28 @@
+//
+//  Debug.xcconfig
+//  Reusable
+//
+//  Created by Christian Seiler on 20/11/2019.
+//  Copyright © 2019 Christian Seiler Services. All rights reserved.
+//
+
+//// Common Configuration
+#include "config/iOS/xcconfig/Common.xcconfig"
+
+//// App target bundle identifier
+AS_BUNDLE_IDENTIFIER = ch.christianseiler.reusable.adhoc.ios
+/// Notification Service target bundle identifier
+AS_BUNDLE_ID_NOTIFSERV = ch.christianseiler.reusable.ios.notificationservice
+/// Notification Content target bundle identifier
+AS_BUNDLE_ID_NOTIFCONTENT = ch.christianseiler.reusable.adhoc.ios.notificationcontent
+/// WatchKit App target bundle identifier
+AS_WKAPP_BUNDLE_IDENTIFIER = ch.christianseiler.reusable.adhoc.ios.watchkitapp
+/// WatchKit Extension target bundle identifier
+AS_WKEXT_BUNDLE_IDENTIFIER = ch.christianseiler.reusable.adhoc.ios.watchkitapp.watchkkitextension
+
+/// App Name
+AS_APP_NAME = Reusable Adhoc
+/// App Icon
+AS_APP_ICON = AppIcon Adhoc
+/// ProjectEnvironment
+AS_APP_ENVIRONMENT = Adhoc

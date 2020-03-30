@@ -10,7 +10,6 @@ import Foundation
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 // MARK: Reusable support for TableView
 public extension TableView {
@@ -43,6 +42,7 @@ public extension TableView {
      except when your type is in a variable and cannot be determined at compile time.
      - seealso: `dequeueReusableCell(withIdentifier:,for:)`
      */
+    @available(iOS 6.0, tvOS 9.0, *)
      final func dequeueReusableCell<T: TableViewCell>(for indexPath: IndexPath, cellType: T.Type = T.self) -> T
         where T: Reusable {
             guard let cell = self.dequeueReusableCell(withIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
@@ -54,14 +54,13 @@ public extension TableView {
             }
             return cell
     }
-
     /**
      Register a NIB-Based `UITableViewHeaderFooterView` subclass (conforming to `Reusable` & `NibLoadable`)
      - parameter headerFooterViewType: the `UITableViewHeaderFooterView` (`Reusable` & `NibLoadable`-conforming)
      subclass to register
      - seealso: `register(_:,forHeaderFooterViewReuseIdentifier:)`
      */
-    @available(iOS 6.0, tvOS 9.0, *)
+    @available(iOS 6.0, tvOS 9.0, macOS 13.0, *)
      final func register<T: UITableViewHeaderFooterView>(headerFooterViewType: T.Type)
         where T: Reusable & NibLoadable {
             self.register(headerFooterViewType.nib, forHeaderFooterViewReuseIdentifier: headerFooterViewType.reuseIdentifier)
@@ -89,6 +88,7 @@ public extension TableView {
     @available(iOS 6.0, tvOS 9.0, *)
      final func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(_ viewType: T.Type = T.self) -> T
         where T: Reusable {
+
             guard let view = self.dequeueReusableHeaderFooterView(withIdentifier: viewType.reuseIdentifier) as? T else {
                 fatalError(
                     "Failed to dequeue a header/footer with identifier \(viewType.reuseIdentifier) "
@@ -100,3 +100,4 @@ public extension TableView {
             return view
     }
 }
+#endif

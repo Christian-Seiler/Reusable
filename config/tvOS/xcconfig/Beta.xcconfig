@@ -1,0 +1,19 @@
+//
+//  Debug.xcconfig
+//  Reusable
+//
+//  Created by Christian Seiler on 20/11/2019.
+//  Copyright © 2019 Christian Seiler Services. All rights reserved.
+//
+
+//// Common Configuration
+#include "config/tvOS/xcconfig/Common.xcconfig"
+
+//// App target bundle identifier
+AS_BUNDLE_IDENTIFIER = ch.christianseiler.reusable.beta.tvos
+/// App Name
+AS_APP_NAME = Reusable Beta
+/// ProjectEnvironment
+AS_APP_ENVIRONMENT = Beta
+/// App Icon
+AS_APP_ICON = AppIcon

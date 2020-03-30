@@ -38,7 +38,13 @@ public extension StoryboardBased where Self: ViewController {
      - returns: instance of the conforming ViewController
      */
     static func instantiate() -> Self {
-        let viewController = sceneStoryboard.instantiateInitialViewController()
+
+        let viewController: ViewController?
+        #if os(iOS) || os(tvOS) || os(watchOS)
+            viewController = sceneStoryboard.instantiateInitialViewController()
+        #elseif os(macOS)
+        viewController = sceneStoryboard.instantiateInitialController()
+        #endif
         guard let typedViewController = viewController as? Self else {
             fatalError("The initialViewController of '\(sceneStoryboard)' is not of class '\(self)'")
         }

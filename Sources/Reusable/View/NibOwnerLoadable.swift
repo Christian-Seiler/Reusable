@@ -29,7 +29,11 @@ public extension NibOwnerLoadable {
     /// and located in the bundle of that class
      static var nib: NibType {
 
+        #if os(macOS)
+        return NibType(nibNamed: String(describing: self), bundle: Bundle(for: self))!
+        #elseif os(iOS) || os(tvOS) || os(watchOS)
         return NibType(nibName: String(describing: self), bundle: Bundle(for: self))
+        #endif
     }
 }
 
@@ -40,7 +44,17 @@ public extension NibOwnerLoadable where Self: ViewType {
      */
      func loadNibContent() {
         let layoutAttributes: [NSLayoutConstraint.Attribute] = [.top, .leading, .bottom, .trailing]
-        for case let view as ViewType in Self.nib.instantiate(withOwner: self, options: nil) {
+
+        let view: [Any]
+        #if os(macOS)
+        var views: NSArray?
+        Self.nib.instantiate(withOwner: nil, topLevelObjects: &views)
+        view = views as! [Any]
+        #else
+        view = Self.nib.instantiate(withOwner: self, options: nil)
+        #endif
+
+        for case let view as ViewType in view {
             view.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(view)
             NSLayoutConstraint.activate(layoutAttributes.map { attribute in

@@ -10,9 +10,9 @@ import Foundation
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 // MARK: Reusable support for CollectionView
+
 public extension CollectionView {
     /**
      Register a NIB-Based `CollectionViewCell` subclass (conforming to `Reusable` & `NibLoadable`)
@@ -92,7 +92,7 @@ public extension CollectionView {
     }
 
     /**
-     Returns a reusable `UICollectionReusableView` object for the class inferred by the return-type
+     Returns a reusable `CollectionReusableView` object for the class inferred by the return-type
      - parameter elementKind: The kind of supplementary view to retrieve.
      - parameter indexPath:   The index path specifying the location of the cell.
      - parameter viewType: The view class to dequeue
@@ -102,7 +102,7 @@ public extension CollectionView {
      - seealso: `dequeueReusableSupplementaryView(ofKind:,withReuseIdentifier:,for:)`
      */
     @available(iOS 6.0, tvOS 9.0, *)
-     final func dequeueReusableSupplementaryView<T: UICollectionReusableView>
+     final func dequeueReusableSupplementaryView<T: CollectionReusableView>
         (ofKind elementKind: String, for indexPath: IndexPath, viewType: T.Type = T.self) -> T
         where T: Reusable {
             let view = self.dequeueReusableSupplementaryView(
@@ -121,3 +121,4 @@ public extension CollectionView {
             return typedView
     }
 }
+#endif
