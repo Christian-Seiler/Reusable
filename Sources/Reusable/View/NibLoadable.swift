@@ -24,7 +24,14 @@ public extension NibLoadable {
     /// By default, use the nib which have the same name as the name of the class,
     /// and located in the bundle of that class
     static var nib: NibType {
+        #if os(macOS)
+        guard let nib = NibType(nibNamed: String(describing: self), bundle: Bundle(for: self)) else {
+            fatalError()
+        }
+        return nib
+        #elseif os(iOS) || os(tvOS) || os(watchOS)
         return NibType(nibName: String(describing: self), bundle: Bundle(for: self))
+        #endif
     }
 }
 
@@ -35,9 +42,20 @@ public extension NibLoadable where Self: ViewType {
      - returns: A `NibLoadable`, `View` instance
      */
      static func loadFromNib() -> Self {
+
+        #if os(macOS)
+        var views: NSArray?
+        nib.instantiate(withOwner: nil, topLevelObjects: &views)
+
+        guard let view = views?[0] as? Self else {
+            fatalError("The nib \(nib) expected its root view to be of type \(self)")
+        }
+
+        #elseif os(iOS)
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? Self else {
             fatalError("The nib \(nib) expected its root view to be of type \(self)")
         }
+        #endif
         return view
     }
 }

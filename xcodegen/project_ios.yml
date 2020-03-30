@@ -1,0 +1,47 @@
+# ############
+# # Targets
+# ############
+
+targets:
+
+  # -----------
+  # Reusable_iOS
+  # -----------
+
+  Reusable_iOS:
+    type: framework
+    platform: iOS
+
+    sources: Sources/Reusable
+
+    # Config Files
+    configFiles:
+      Debug: config/iOS/xcconfig/Debug.xcconfig
+      Release: config/iOS/xcconfig/Release.xcconfig
+      Adhoc: config/iOS/xcconfig/Adhoc.xcconfig
+      Beta: config/iOS/xcconfig/Beta.xcconfig
+
+    # scheme
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - name: Reusable_Tests_iOS
+          parallelizable: true
+          randomExecutionOrder: true
+
+    # scripts
+    postCompileScripts:
+      # swiftlint
+      - script: swiftlint autocorrect
+        name: ⚠️ Swiftlint
+
+  # -----------
+  # Reusable_Tests_iOS
+  # -----------
+  Reusable_Tests_iOS:
+    platform: iOS
+    type: bundle.unit-test
+    sources: Tests/Reusable
+
+    dependencies:
+      - target: Reusable_iOS

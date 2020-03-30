@@ -36,7 +36,7 @@ public extension StoryboardSceneBased {
 }
 
 // MARK: Support for instantiation from Storyboard
-public extension StoryboardSceneBased where Self: UIViewController {
+public extension StoryboardSceneBased where Self: ViewController {
     /**
      Create an instance of the ViewController from its associated Storyboard and the
      Scene with identifier `sceneIdentifier`
@@ -44,7 +44,14 @@ public extension StoryboardSceneBased where Self: UIViewController {
      */
     static func instantiate() -> Self {
         let storyboard = Self.sceneStoryboard
-        let viewController = storyboard.instantiateViewController(withIdentifier: self.sceneIdentifier)
+
+        let viewController: ViewController?
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        viewController = storyboard.instantiateViewController(withIdentifier: self.sceneIdentifier)
+        #elseif os(macOS)
+        viewController = sceneStoryboard.instantiateController(identifier: self.sceneIdentifier)
+        #endif
+
         guard let typedViewController = viewController as? Self else {
             fatalError("The viewController '\(self.sceneIdentifier)' of '\(storyboard)' is not of class '\(self)'")
         }
