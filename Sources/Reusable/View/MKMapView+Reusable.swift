@@ -30,8 +30,8 @@ public extension MKMapView {
      except when your type is in a variable and cannot be determined at compile time.
      - seealso: `dequeueReusableAnnotationView(withIdentifier:,for:)`
      */
-     final func dequeueReusableCell<T: MKAnnotationView>(for annotation: MKAnnotation,
-                                                        annotationType: T.Type = T.self) -> T where T: Reusable {
+     final func dequeueReusableAnnotationView<T: MKAnnotationView>(for annotation: MKAnnotation,
+                                                                   annotationType: T.Type = T.self) -> T where T: Reusable {
 
         if let view: T = self.dequeueReusableAnnotationView(withIdentifier: annotationType.reuseIdentifier) as? T {
             view.annotation = annotation
