@@ -25,12 +25,14 @@ public extension NibLoadable {
     /// and located in the bundle of that class
     static var nib: NibType {
         #if os(macOS)
-        guard let nib = NibType(nibNamed: String(describing: self), bundle: Bundle(for: self)) else {
-            fatalError()
+        guard let nib = NibType(nibNamed: String(describing: self),
+                                bundle: Bundle(for: self)) else {
+            fatalError("could not create nib")
         }
         return nib
         #elseif os(iOS) || os(tvOS) || os(watchOS)
-        return NibType(nibName: String(describing: self), bundle: Bundle(for: self))
+        return NibType(nibName: String(describing: self),
+                       bundle: Bundle(for: self))
         #endif
     }
 }

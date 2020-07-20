@@ -20,7 +20,8 @@ public extension TableView {
      */
       func register<T: TableViewCell>(cellType: T.Type)
         where T: Reusable & NibLoadable {
-            self.register(cellType.nib, forCellReuseIdentifier: cellType.reuseIdentifier)
+            self.register(cellType.nib,
+                          forCellReuseIdentifier: cellType.reuseIdentifier)
     }
 
     /**
@@ -30,7 +31,8 @@ public extension TableView {
      */
      final func register<T: TableViewCell>(cellType: T.Type)
         where T: Reusable {
-            self.register(cellType.self, forCellReuseIdentifier: cellType.reuseIdentifier)
+            self.register(cellType.self,
+                          forCellReuseIdentifier: cellType.reuseIdentifier)
     }
 
     /**
@@ -43,9 +45,10 @@ public extension TableView {
      - seealso: `dequeueReusableCell(withIdentifier:,for:)`
      */
     @available(iOS 6.0, tvOS 9.0, *)
-     final func dequeueReusableCell<T: TableViewCell>(for indexPath: IndexPath, cellType: T.Type = T.self) -> T
-        where T: Reusable {
-            guard let cell = self.dequeueReusableCell(withIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
+     final func dequeueReusableCell<T: TableViewCell>(for indexPath: IndexPath,
+                                                      cellType: T.Type = T.self) -> T where T: Reusable {
+            guard let cell = self.dequeueReusableCell(withIdentifier: cellType.reuseIdentifier,
+                                                      for: indexPath) as? T else {
                 fatalError(
                     "Failed to dequeue a cell with identifier \(cellType.reuseIdentifier) matching type \(cellType.self). "
                         + "Check that the reuseIdentifier is set properly in your XIB/Storyboard "
@@ -61,8 +64,7 @@ public extension TableView {
      - seealso: `register(_:,forHeaderFooterViewReuseIdentifier:)`
      */
     @available(iOS 6.0, tvOS 9.0, macOS 13.0, *)
-     final func register<T: UITableViewHeaderFooterView>(headerFooterViewType: T.Type)
-        where T: Reusable & NibLoadable {
+     final func register<T: UITableViewHeaderFooterView>(headerFooterViewType: T.Type) where T: Reusable & NibLoadable {
             self.register(headerFooterViewType.nib, forHeaderFooterViewReuseIdentifier: headerFooterViewType.reuseIdentifier)
     }
 
@@ -74,7 +76,8 @@ public extension TableView {
     @available(iOS 6.0, tvOS 9.0, *)
     final func register<T: UITableViewHeaderFooterView>(headerFooterViewType: T.Type)
         where T: Reusable {
-            self.register(headerFooterViewType.self, forHeaderFooterViewReuseIdentifier: headerFooterViewType.reuseIdentifier)
+            self.register(headerFooterViewType.self,
+                          forHeaderFooterViewReuseIdentifier: headerFooterViewType.reuseIdentifier)
     }
 
     /**

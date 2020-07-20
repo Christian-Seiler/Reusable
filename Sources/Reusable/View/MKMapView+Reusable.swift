@@ -17,7 +17,8 @@ public extension MKMapView {
      - seealso: `register(_:,forAnnotationViewWithReuseIdentifier:)`
      */
      final func register<T: MKAnnotationView>(annotationType: T.Type) where T: Reusable {
-        self.register(annotationType.self, forAnnotationViewWithReuseIdentifier: annotationType.reuseIdentifier)
+        self.register(annotationType.self,
+                      forAnnotationViewWithReuseIdentifier: annotationType.reuseIdentifier)
     }
 
     /**
@@ -36,7 +37,8 @@ public extension MKMapView {
             view.annotation = annotation
             return view
         } else {
-            let view = T(annotation: annotation, reuseIdentifier: annotationType.reuseIdentifier)
+            let view = T(annotation: annotation,
+                         reuseIdentifier: annotationType.reuseIdentifier)
             view.canShowCallout = true
             return view
         }

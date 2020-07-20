@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#  swiftgen.sh
+#  PublicTransportCalculator
+#
+#  Created by Christian Seiler on 18.07.20.
+#  Copyright © 2020 Christian Seiler. All rights reserved.
+
+set -x
+
+if which swiftgen >/dev/null; then
+  swiftgen config run --config .swiftgen.yml
+else
+  echo "warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen"
+  exit 1
+fi
