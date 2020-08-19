@@ -2,70 +2,56 @@
   "warnings": [
     {
       "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 16,
-      "symbol": "CollectionView",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 16,
-      "symbol": "TableView",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 21,
+      "line": 22,
       "symbol": "Storyboard",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 22,
+      "line": 23,
       "symbol": "ViewController",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 23,
+      "line": 24,
       "symbol": "NibType",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 24,
+      "line": 25,
       "symbol": "ViewType",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 25,
+      "line": 26,
       "symbol": "TableViewCell",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 26,
+      "line": 27,
       "symbol": "CollectionViewCell",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 27,
+      "line": 28,
       "symbol": "CollectionView",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/christianseiler/Developer/Reusable/Sources/Reusable/Types.swift",
-      "line": 28,
+      "line": 29,
       "symbol": "TableView",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
