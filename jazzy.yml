@@ -12,16 +12,18 @@ clean: true
 
 module: Reusable
 framework_root:  ./Sources
-exclude: ./docs
 min_acl: public
-sdk: [iphone,macosx]
+sdk: [iphone|macosx]
+swift_version: 5.3
+swift_build_tool: spm
 
-author: Christian Seiler
+author: "Christian Seiler"
 author_url: "http://www.christianseiler.ch"
+github_url: "https://github.com/Christian-Seiler/Reusable"
+docset_path: "https://christian-seiler.github.io/Reusable/docsets/Reusable.docset"
 
+module: "Reusable"
 title: "Reusable Framework"
-version: 1.0.2
+module_version: 1.0.5
 copyright: "Christian Seiler Services"
 readme: "README.md"
-
-# head
