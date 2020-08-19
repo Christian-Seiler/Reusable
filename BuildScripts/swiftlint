@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#  swiftlint.sh
+#  PublicTransportCalculator
+#
+#  Created by Christian Seiler on 18.07.20.
+#  Copyright © 2020 Christian Seiler. All rights reserved.
+
+set -x
+
+if which swiftlint >/dev/null; then
+  swiftlint autocorrect
+  swiftlint
+else
+  echo "warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint"
+  exit 1
+fi

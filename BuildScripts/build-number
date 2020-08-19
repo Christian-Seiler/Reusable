@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#  swiftgen.sh
+#  PublicTransportCalculator
+#
+#  Created by Christian Seiler on 18.07.20.
+#  Copyright © 2020 Christian Seiler. All rights reserved.
+
+set -x
+
+agvtool next-version -all

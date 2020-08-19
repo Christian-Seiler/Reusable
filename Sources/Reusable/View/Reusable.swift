@@ -26,6 +26,6 @@ public typealias NibReusable = Reusable & NibLoadable
 public extension Reusable {
     /// By default, use the name of the class as String for its reuseIdentifier
      static var reuseIdentifier: String {
-        return String(describing: self)
+        String(describing: self)
     }
 }

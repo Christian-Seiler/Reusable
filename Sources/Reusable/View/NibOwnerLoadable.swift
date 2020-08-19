@@ -58,12 +58,13 @@ public extension NibOwnerLoadable where Self: ViewType {
             view.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(view)
             NSLayoutConstraint.activate(layoutAttributes.map { attribute in
-                NSLayoutConstraint(
-                    item: view, attribute: attribute,
-                    relatedBy: .equal,
-                    toItem: self, attribute: attribute,
-                    multiplier: 1, constant: 0.0
-                )
+                NSLayoutConstraint(item: view,
+                                   attribute: attribute,
+                                   relatedBy: .equal,
+                                   toItem: self,
+                                   attribute: attribute,
+                                   multiplier: 1,
+                                   constant: 0.0)
             })
         }
     }

@@ -31,7 +31,7 @@ public protocol StoryboardSceneBased: class {
 public extension StoryboardSceneBased {
     /// By default, use the `sceneIdentifier` with the same name as the class
     static var sceneIdentifier: String {
-        return String(describing: self)
+        String(describing: self)
     }
 }
 
